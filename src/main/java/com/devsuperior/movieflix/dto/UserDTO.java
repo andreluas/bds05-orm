@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 import com.devsuperior.movieflix.entities.User;
 
@@ -14,7 +14,7 @@ public class UserDTO implements Serializable {
 
     private Long id;
 
-    @NotBlank(message = "Campo obrigatório")
+    @NotEmpty(message = "Campo obrigatório")
     private String name;
 
     @Email(message = "Favor entrar um e-mail válido")
@@ -47,12 +47,12 @@ public class UserDTO implements Serializable {
         this.id = id;
     }
 
-    public String getFirstName() {
+    public String getName() {
         return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.name = firstName;
+    public void setFirstName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
